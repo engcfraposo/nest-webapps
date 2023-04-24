@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nestjs-app
-          path: .
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,5 +53,5 @@ jobs:
           app-name: 'nest-webapps'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_792D6D7AA7944F38B119B780D9622AEA }}
-          package: .
+          package: dist
       
